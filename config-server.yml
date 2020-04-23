@@ -1,37 +1,15 @@
-msaconfig:
-  greeting: "hello"
-  
----
-
-spring:
-  profiles: local
-
-msaconfig:
-  greeting: "welcome to local server"
-
----
-
 spring:
   profiles: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${mysql.connection.uri:jdbc:mysql://localhost:3306/cafeweb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    username: root
+    password: ${mysql.root.password:asdf1234}
 
-msaconfig:
-  greeting: "welcome to dev server"
-
----
-
-spring:
-  profiles: test
-  
-msaconfig:
-  greeting: "welcome to test server"
-
----
-
-spring:
-  profiles: staging
-  
-msaconfig:
-  greeting: "welcome to staging server"
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: '${eureka.server:http://localhost:8761/eureka/}'
 
 ---
 
