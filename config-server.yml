@@ -12,11 +12,11 @@ msaconfig:
 ---
 spring:
   profiles: dev
-  dataSource:
+  datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/order?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    url: ${mysql.connection.uri:jdbc:mysql://localhost:3306/order?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
     username: root
-    password: asdf1234
+    password: ${mysql.root.password:asdf1234}
 
 eureka:
   client:
