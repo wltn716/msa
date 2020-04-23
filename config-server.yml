@@ -12,7 +12,7 @@ msaconfig:
 ---
 spring:
   profiles: dev
-  datasource:
+  dataSource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: ${mysql.connection.uri:jdbc:mysql://localhost:3306/order?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
     username: root
