@@ -15,4 +15,10 @@ eureka:
     serviceUrl:
       defaultZone: http://${hostname}:8761/eureka/
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["env", "refresh","info"]
+
 debug: true
