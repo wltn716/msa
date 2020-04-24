@@ -10,12 +10,12 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 30
-    hostname: localhost
+    hostname: 211.62.49.103
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://211.62.49.103:8761/eureka/
     
 
 debug: true
