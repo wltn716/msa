@@ -8,5 +8,3 @@ zuul:
       path: /api/product/**
     wcafe-user:
       path: /api/user/**
-
-debug: true
