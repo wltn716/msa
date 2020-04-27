@@ -1,11 +1,11 @@
 eureka:
   instance:
-    hostname: ${hostname}
+    hostname: '${HOSTNAME}.eureka'
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 30
   client:
     serviceUrl:
-      defaultZone: http://${hostname}:8761/eureka/
+      defaultZone: '${EUREKA_CLUSTER_SERVICES}'
 
 management:
   endpoints:
