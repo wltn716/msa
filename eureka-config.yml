@@ -6,3 +6,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: '${EUREKA_CLUSTER_SERVICES}'
+
+# api-gateway가 서비스들을 제대로 못찾는경우!!!
+## status 에 있는 서비스들의 주소를 제대로 명시를 안해줘서..?? 암튼 잘못된 주소로 포워딩? 하게됨
+## 이는 위에 나와있는 eureka.instance.hostname으로 명시 가능함!
+###------
+## 이전에는 instance부분은 작성 x, 그냥 client 부분만 작성했었고 defualtZone도 자바변수로 선언 안함 => 에러발생!
+## https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-eureka-server.html#spring-cloud-eureka-server-standalone-mode 여기서 2.4 Standalone Mode 네모박스에 따라서 수정했었음
