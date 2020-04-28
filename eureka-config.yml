@@ -6,9 +6,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: '${EUREKA_CLUSTER_SERVICES}'
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: ["env", "refresh","info"]
