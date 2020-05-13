@@ -1,7 +1,7 @@
 zuul:
   routes:
     wcafe-web:
-      path: /**
+      path: /web/**
     wcafe-order:
       path: /api/order/**
     wcafe-product:
