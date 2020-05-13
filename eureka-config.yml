@@ -5,7 +5,8 @@ eureka:
     lease-expiration-duration-in-seconds: 30
   client:
     serviceUrl:
-      defaultZone: '${EUREKA_CLUSTER_SERVICES}'
+      defaultZone: 'http://localhost:8761/'
+      #defaultZone: '${EUREKA_CLUSTER_SERVICES}'
 
 # api-gateway가 서비스들을 제대로 못찾는경우!!!
 ## status 에 있는 서비스들의 주소를 제대로 명시를 안해줘서..?? 암튼 잘못된 주소로 포워딩? 하게됨
