@@ -1,3 +1,15 @@
+spring:
+  profiles: default
+
+feign:
+  product-api.url: http://localhost:8090/api/product
+  order-api.url: http://localhost:8090/api/order
+  user-api.url: http://localhost:8090/
+
+---
+spring:
+  profiles: dev
+
 feign:
   product-api.url: http://${api.gateway.host}:8090/api/product
   order-api.url: http://${api.gateway.host}:8090/api/order
