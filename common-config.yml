@@ -10,7 +10,7 @@ spring:
   profiles: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://local:3306/${database.name}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://mysql:3306/${database.name}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: asdf1234
 
