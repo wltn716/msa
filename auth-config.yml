@@ -1,8 +1,12 @@
 security:
   oauth2:
-    client:
-      client-id: auth_id
-      client-secret: auth_secret
+#    client:
+#      client-id: auth_id
+#      client-secret: auth_secret
     resource: 
       jwt:
         key-value: helloworld
+
+
+
+        
