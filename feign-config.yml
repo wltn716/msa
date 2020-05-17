@@ -4,7 +4,7 @@ spring:
 feign:
   product-api.url: http://localhost:8090/api/product
   order-api.url: http://localhost:8090/api/order
-  user-api.url: http://localhost:8090/
+  user-api.url: http://localhost:8090/api/user
 
 ---
 spring:
@@ -13,4 +13,4 @@ spring:
 feign:
   product-api.url: http://${api.gateway.host}:8090/api/product
   order-api.url: http://${api.gateway.host}:8090/api/order
-  user-api.url: http://${api.gateway.host}:8090/
+  user-api.url: http://${api.gateway.host}:8090/api/user
