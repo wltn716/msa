@@ -6,9 +6,8 @@ security:
     client:
       client-id: auth_id
       client-secret: auth_secret
-      accessTokenUri: http://loaclhost:8095/oauth/token
-      userAuthorizationUri: http://loaclhost:8095/oauth/authorize
-      resourceURI: http://localhost:8090/api/**
+      access-token-uri: http://loaclhost:8095/oauth/token
+      user-authorization-uri: http://loaclhost:8095/oauth/authorize
     resource: 
       jwt:
         key-value: helloworld
@@ -22,8 +21,8 @@ security:
     client:
       client-id: auth_id
       client-secret: auth_secret
-      accessTokenUri: http://${auth.host}:8095/oauth/token
-      userAuthorizationUri: http://${auth.host}:8095/oauth/authorize
+      access-token-uri: http://${auth.host}:8095/oauth/token
+      user-authorization-uri: http://${auth.host}:8095/oauth/authorize
       resourceURI: http://${api.gateway.host}:8090/api/**
     resource: 
       jwt:
