@@ -8,3 +8,4 @@ zuul:
       path: /api/product/**
     wcafe-user:
       path: /api/user/**
+  sensitiveHeaders: Cookie, Set-Cookie
