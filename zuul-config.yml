@@ -10,4 +10,4 @@ zuul:
       path: /api/user/**
     wcafe-auth-server:
       path: /auth/**
-  # sensitiveHeaders: Cookie, Set-Cookie
+  sensitiveHeaders: Cookie, Set-Cookie
