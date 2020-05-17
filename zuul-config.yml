@@ -6,6 +6,8 @@ zuul:
       path: /api/order/**
     wcafe-product:
       path: /api/product/**
+    wcafe-user:
+      path: /api/user/**
     wcafe-auth-server:
       path: /auth/**
   sensitiveHeaders: Cookie, Set-Cookie
