@@ -1,12 +1,31 @@
+spring:
+  profiles: default
+
 security:
   oauth2:
     client:
       client-id: auth_id
       client-secret: auth_secret
+      accessTokenUri: http://localhost:8090/auth/oauth/token
+      userAuthorizationUri: http://localhost:8090/auth/oauth/authorize
     resource: 
       jwt:
         key-value: helloworld
 
+---
+spring:
+  profiles: dev
+
+security:
+  oauth2:
+    client:
+      client-id: auth_id
+      client-secret: auth_secret
+      accessTokenUri: http://${api.gateway.host}:8090/auth/oauth/token
+      userAuthorizationUri: http://${api.gateway.host}:8090/auth/oauth/authorize
+    resource: 
+      jwt:
+        key-value: helloworld
 
 
         
