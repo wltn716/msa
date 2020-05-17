@@ -6,8 +6,8 @@ security:
     client:
       client-id: auth_id
       client-secret: auth_secret
-      access-token-uri: http://loaclhost:8095/oauth/token
-      user-authorization-uri: http://loaclhost:8095/oauth/authorize
+      access-token-uri: http://localhost:8095/oauth/token
+      user-authorization-uri: http://localhost:8095/oauth/authorize
     resource: 
       jwt:
         key-value: helloworld
