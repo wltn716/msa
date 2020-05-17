@@ -7,5 +7,5 @@ zuul:
     wcafe-product:
       path: /api/product/**
     wcafe-auth-server:
-    path: /auth/**
+      path: /auth/**
   sensitiveHeaders: Cookie, Set-Cookie
