@@ -23,7 +23,6 @@ security:
       client-secret: auth_secret
       access-token-uri: http://${auth.host}:8095/oauth/token
       user-authorization-uri: http://${auth.host}:8095/oauth/authorize
-      resourceURI: http://${api.gateway.host}:8090/api/**
     resource: 
       jwt:
         key-value: helloworld
