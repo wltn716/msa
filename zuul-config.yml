@@ -1,7 +1,7 @@
 zuul:
   routes:
     wcafe-web:
-      path: /**
+      path: /web/**
     wcafe-order:
       path: /api/order/**
     wcafe-product:
@@ -10,4 +10,4 @@ zuul:
       path: /api/user/**
     wcafe-auth-server:
       path: /auth/**
-  sensitiveHeaders: Cookie, Set-Cookie
+  # sensitiveHeaders: Cookie, Set-Cookie
