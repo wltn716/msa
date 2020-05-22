@@ -8,6 +8,8 @@ security:
       client-secret: auth_secret
       access-token-uri: http://localhost:8095/oauth/token
       user-authorization-uri: http://localhost:8095/oauth/authorize
+      registered-redirect-uri:
+        - http://localhost:8095/hello
     resource: 
       jwt:
         key-value: helloworld

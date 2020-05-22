@@ -1,5 +1,14 @@
 zuul:
+  # true인 경우, X-Forwarded-* 헤더가 추가됨
+  add-proxy-headers: false
+
+  # NOTE : Zuul 라우팅 목록 중 "kthcorp-example"를 제외하고 ignore 한다.
+  ignored-services: '*'
+  host:
+    max-total-connections: 500
+  ribbon-isolation-strategy: THREAD
   routes:
+    routes:
     wcafe-web:
       path: /web/**
     wcafe-order:
@@ -10,4 +19,51 @@ zuul:
       path: /api/user/**
     wcafe-auth-server:
       path: /auth/**
-  # sensitiveHeaders: Cookie, Set-Cookie
+    # sensitiveHeaders: Cookie, Set-Cookie
+  thread-pool:
+    use-separate-thread-pools: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 40000
+
+  # 참조 : https://github.com/Netflix/Hystrix/wiki/configuration#threadpool-properties
+  # ribbon-isolation-strategy을 THREAD로 설정한 경우 "ThreadPoolExecutor" Size 설정.
+  threadpool:
+    default:
+      coreSize: 50
+      maximumSize: 500
+      keepAliveTimeMinutes: 1
+      # "allowMaximumSizeToDivergeFromCoreSize"가 설정 된 경우에만 "maximumSize"값이 적용됨.
+      allowMaximumSizeToDivergeFromCoreSize: true
+    spring-cloud-msa-webapp01:
+      coreSize: 50
+      maximumSize: 500
+      keepAliveTimeMinutes: 1
+      # "allowMaximumSizeToDivergeFromCoreSize"가 설정 된 경우에만 "maximumSize"값이 적용됨.
+      allowMaximumSizeToDivergeFromCoreSize: true
+    spring-cloud-msa-webapp02:
+      coreSize: 50
+      maximumSize: 500
+      keepAliveTimeMinutes: 1
+      # "allowMaximumSizeToDivergeFromCoreSize"가 설정 된 경우에만 "maximumSize"값이 적용됨.
+      allowMaximumSizeToDivergeFromCoreSize: true
+
+ribbon:
+  # --------------------------------------------------------------------------------
+  # Ribbon read and connect timeout 계산.
+  # ribbonTimeout = (ConnectTimeout + ReadTimeout) * (MaxAutoRetries + 1) * (MaxAutoRetriesNextServer + 1);
+  # Hystrix의 timeoutInMilliseconds 시간은 위의 계산 값보다 크게 설정.
+  # --------------------------------------------------------------------------------
+  # Read timeout used by Apache HttpClient (Default. 1000)
+  ReadTimeout: 5000
+
+  # Connect timeout used by Apache HttpClient (Default. 1000)
+  ConnectTimeout: 5000
+
+  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
