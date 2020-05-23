@@ -1,6 +1,7 @@
 zuul:
   # true인 경우, X-Forwarded-* 헤더가 추가됨
   add-proxy-headers: false
+  sensitiveHeaders: Cookie,Set-Cookie 
 
   # NOTE : Zuul 라우팅 목록 중 "kthcorp-example"를 제외하고 ignore 한다.
   ignored-services: '*'
