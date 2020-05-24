@@ -10,12 +10,6 @@ security:
       jwt:
         key-value: helloworld
 
-logging:
-  level:
-    org:
-      springframework:
-        security: DEBUG
-
 ---
 spring:
   profiles: dev
