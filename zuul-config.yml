@@ -20,7 +20,7 @@ zuul:
       path: /api/user/**
     wcafe-auth-server:
       path: /auth/**
-    # sensitiveHeaders: Cookie, Set-Cookie
+      
   thread-pool:
     use-separate-thread-pools: true
 
