@@ -64,3 +64,6 @@ ribbon:
   ConnectTimeout: 5000
 
   NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
+
+
+client-url: http://${client-host:localhost}:8080
