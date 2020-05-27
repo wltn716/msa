@@ -7,4 +7,4 @@ zuul:
     wcafe-user:
       path: /api/user/**
 
-client-url: http://${client-host:localhost}:8080/
+client-url: http://${client-host:localhost}:8080
