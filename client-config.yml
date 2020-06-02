@@ -1,0 +1,23 @@
+spring:
+  profiles: default
+
+feign:
+  product-api.url: http://localhost:8090/api/product
+  order-api.url: http://localhost:8090/api/order
+  user-api.url: http://localhost:8090/api/user
+
+oauth2-access-token-uri: ${oauth2.access.token.uri:http://localhost:8095/oauth/token}
+
+---
+
+
+
+spring:
+  profiles: dev
+
+feign:
+  product-api.url: http://${api.gateway.host}:8090/api/product
+  order-api.url: http://${api.gateway.host}:8090/api/ordero
+  user-api.url: http://${api.gateway.host}:8090/api/user
+
+oauth2-access-token-uri: ${oauth2.access.token.uri:http://localhost:8095/oauth/token}
