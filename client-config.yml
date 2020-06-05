@@ -7,8 +7,8 @@ feign:
   user-api.url: http://localhost:8090/api/user
 
 oauth2-access-token-uri: ${oauth2.access.token.uri:http://localhost:8095/oauth/token}
-oauth2-client-id: auth_id
-oauth2-client-secret: auth_secret
+oauth2-client-id: 2e9f6889-1d2d-4829-aa18-f5ad962a1e69
+oauth2-client-secret: b74f2ff9-edf2-4b0d-b397-5e20be0cd781
 
 ---
 
