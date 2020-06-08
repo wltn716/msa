@@ -9,7 +9,6 @@ zuul:
     max-total-connections: 500
   ribbon-isolation-strategy: THREAD
   routes:
-    routes:
     wcafe-order:
       path: /api/order/**
     wcafe-product:

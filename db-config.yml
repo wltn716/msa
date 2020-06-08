@@ -6,8 +6,8 @@ spring:
     password: '${mysql.root.password:asdf1234}'
 
 mybatis:
-  type-aliases-package: com.js.wcafeOrder.dto
-  mapper-locations: mapper/*.xml
+  type-aliases-package: com.js.${package.name}.dto
+  mapper-locations: classpath:mapper/*.xml
 
 ---
 spring:
@@ -19,8 +19,8 @@ spring:
     password: asdf1234
 
 mybatis:
-  type-aliases-package: com.js.wcafeOrder.dto
-  mapper-locations: mapper/*.xml
+  type-aliases-package: com.js.${package.name}.dto
+  mapper-locations: classpath:mapper/*.xml
     
 ---
 spring:
@@ -32,5 +32,5 @@ spring:
     password: '${mysql.root.password:asdf1234}'
 
 mybatis:
-  type-aliases-package: com.js.wcafeOrder.dto
-  mapper-locations: mapper/*.xml
+  type-aliases-package: com.js.${package.name}.dto
+  mapper-locations: classpath:mapper/*.xml
