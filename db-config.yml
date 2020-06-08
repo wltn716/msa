@@ -17,6 +17,10 @@ spring:
     url: jdbc:mysql://mysql:3306/${database.name}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: asdf1234
+
+mybatis:
+  type-aliases-package: com.js.wcafeOrder.dto
+  mapper-locations: mapper/*.xml
     
 ---
 spring:
@@ -26,3 +30,7 @@ spring:
     url: jdbc:mysql://mysql-0.mysql.default.svc.cluster.local:3306/${database.name}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: '${mysql.root.password:asdf1234}'
+
+mybatis:
+  type-aliases-package: com.js.wcafeOrder.dto
+  mapper-locations: mapper/*.xml
