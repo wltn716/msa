@@ -5,6 +5,10 @@ spring:
     username: root
     password: '${mysql.root.password:asdf1234}'
 
+mybatis:
+  type-aliases-package: com.js.wcafeOrder.dto
+  mapper-locations: mapper/*.xml
+
 ---
 spring:
   profiles: dev
